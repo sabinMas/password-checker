@@ -69,7 +69,7 @@ public class PasswordCheckerTest {
 
 
   @Test
-  public void testDescribePasswordLength() {
+  public void testDescribePasswordLengthMedium() {
     //arrange
     PasswordChecker checker = new PasswordChecker(3, 6);
 
@@ -87,6 +87,18 @@ public class PasswordCheckerTest {
     String actual = checker.describePasswordLength("pop");
 
     assertEquals("short", actual);
+  }
+
+  @Test
+  public void testDescribePasswordLengthLong(){
+    //arrange
+    PasswordChecker checker = new PasswordChecker(3, 6);
+
+    //Act
+    String actual = checker.describePasswordLength("Supercalafragalistic");
+
+    //Assert
+    assertEquals("long", actual);
   }
 
 }
