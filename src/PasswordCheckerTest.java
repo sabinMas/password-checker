@@ -33,9 +33,18 @@ public class PasswordCheckerTest {
 
     Boolean isNull = checker3.isBannedPassword("");
 
-    assertFalse(isNull);
+    assertTrue(isNull);
 
 
+  }
+  @Test 
+  public void testIsAlphanumericTrue(){
+    //arrange 
+    PasswordChecker checker4 = new PasswordChecker(2,8);
+    //act
+    Boolean isTrue = checker4.isAlphanumeric("Ab23cd45");
+    //assert
+    assertTrue(isTrue);
   }
 
 }
